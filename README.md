@@ -13,8 +13,8 @@ For use with the dc10-scalaq code generator:
 Add the following dependecies to your `build.sbt` file:
 
 ```scala
-"com.julianpeeters" %% "dc10-scalaq" % "0.0.0"
-"com.julianpeeters" %% "dc10-scalaq-twelf" % "0.0.0"
+"com.julianpeeters" %% "dc10-scalaq" % "0.1.0"
+"com.julianpeeters" %% "dc10-scalaq-twelf" % "0.1.0"
 ```
 
 ### Examples
@@ -28,7 +28,7 @@ import dc10.scalaq.twelf.`1.7.1+`
 import scala.language.implicitConversions // for references to n
 
   val ast = TYPE("evenImpliesEven2", (VAL("n", NAT) ==> (n => EVEN(n) ==> EVEN2(n))))
-// ast: IndexedStateT[ErrorF, List[Statement], List[Statement], TypeExpr[Function1[Nat, Function1[Even, Even2]], Nat]] = cats.data.IndexedStateT@335cb5e6
+// ast: IndexedStateT[ErrorF, List[Statement], List[Statement], TypeExpr[Function1[Nat, Function1[Even, Even2]], Nat]] = cats.data.IndexedStateT@78793b5f
 
   val res = ast.compile.toString["Twelf 1.7.1+"]
 // res: String = "even-implies-even2 : {N:nat} -> even N -> even2 N"
