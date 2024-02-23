@@ -28,9 +28,9 @@ import dc10.scalaq.dsl.{*, given}
 import dc10.scalaq.twelf.`1.7.1+`
 import scala.language.implicitConversions // for references to n
 
-  val ast = TYPE("evenImpliesEven2", (VAL("n", NAT) ==> (n => EVEN(n) ==> EVEN2(n))))
-// ast: IndexedStateT[ErrorF, List[Statement], List[Statement], TypeExpr[Function1[Nat, Function1[Even, Even2]], Nat]] = cats.data.IndexedStateT@74f46b46
+val ast = TYPE("evenImpliesEven2", (VAL("n", NAT) ==> (n => EVEN(n) ==> EVEN2(n))))
+// ast: IndexedStateT[ErrorF, List[Statement], List[Statement], TypeExpr[Function1[Nat, Function1[Even, Even2]], Nat]] = cats.data.IndexedStateT@61be529b
 
-  val res = ast.compile.toString["Twelf 1.7.1+"]
+val res = ast.compile.toString["Twelf 1.7.1+"]
 // res: String = "even-implies-even2 : {N:nat} -> even N -> even2 N"
 ```

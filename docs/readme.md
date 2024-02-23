@@ -28,7 +28,7 @@ import dc10.scalaq.dsl.{*, given}
 import dc10.scalaq.twelf.`1.7.1+`
 import scala.language.implicitConversions // for references to n
 
-  val ast = TYPE("evenImpliesEven2", (VAL("n", NAT) ==> (n => EVEN(n) ==> EVEN2(n))))
+val ast = TYPE("evenImpliesEven2", (VAL("n", NAT) ==> (n => EVEN(n) ==> EVEN2(n))))
 
-  val res = ast.compile.toString["Twelf 1.7.1+"]
+val res = ast.compile.toString["Twelf 1.7.1+"]
 ```
