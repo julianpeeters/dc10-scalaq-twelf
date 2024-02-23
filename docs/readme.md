@@ -14,7 +14,7 @@ For use with the dc10-scalaq code generator:
 Add the following dependecies to your `build.sbt` file:
 
 ```scala
-"com.julianpeeters" %% "dc10-scalaq" % "@VERSION@"
+"com.julianpeeters" %% "dc10-scalaq" % "@SCALAQ@"
 "com.julianpeeters" %% "dc10-scalaq-twelf" % "@VERSION@"
 ```
 
@@ -25,10 +25,10 @@ Add the following dependecies to your `build.sbt` file:
 ```scala mdoc:reset
 import dc10.scala.compiler.{compile, toString}
 import dc10.scalaq.dsl.{*, given}
-import dc10.scalaq.twelf.`1.7.1+`
+import dc10.scalaq.twelf.`@TWELF@`
 import scala.language.implicitConversions // for references to n
 
 val ast = TYPE("evenImpliesEven2", (VAL("n", NAT) ==> (n => EVEN(n) ==> EVEN2(n))))
 
-val res = ast.compile.toString["Twelf 1.7.1+"]
+val res = ast.compile.toString["Twelf @TWELF@"]
 ```
