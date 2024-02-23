@@ -5,31 +5,29 @@ Render to Twelf as a target lang.
 
 ## Usage
 For use with the dc10-scalaq code generator:
- - Libraries for Scala 3 (JS, JVM, and Native platforms)
- - Renders code for Twelf 1.7.1+
+ - Libraries for Scala @SCALA@ (JS, JVM, and Native platforms)
+ - Renders code for Twelf @TWELF@
 
 ### Installation
 
 Add the following dependecies to your `build.sbt` file:
 
 ```scala
-"com.julianpeeters" %% "dc10-scalaq" % "0.0.0"
-"com.julianpeeters" %% "dc10-scalaq-twelf" % "0.0.0"
+"com.julianpeeters" %% "dc10-scalaq" % "@VERSION@"
+"com.julianpeeters" %% "dc10-scalaq-twelf" % "@VERSION@"
 ```
 
 ### Examples
 
 ##### Type declaration of `even-implies-even2`:
 
-```scala
+```scala mdoc:reset
 import dc10.scala.compiler.{compile, toString}
 import dc10.scalaq.dsl.{*, given}
 import dc10.scalaq.twelf.`1.7.1+`
 import scala.language.implicitConversions // for references to n
 
   val ast = TYPE("evenImpliesEven2", (VAL("n", NAT) ==> (n => EVEN(n) ==> EVEN2(n))))
-// ast: IndexedStateT[ErrorF, List[Statement], List[Statement], TypeExpr[Function1[Nat, Function1[Even, Even2]], Nat]] = cats.data.IndexedStateT@335cb5e6
 
   val res = ast.compile.toString["Twelf 1.7.1+"]
-// res: String = "even-implies-even2 : {N:nat} -> even N -> even2 N"
 ```
