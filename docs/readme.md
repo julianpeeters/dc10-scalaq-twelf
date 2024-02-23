@@ -2,6 +2,7 @@
 Render to Twelf as a target lang.
  - Status: Proof of Concept
  - Artifact available on Maven Central
+ - Based on Chris Martens' course [CM500: Logical Frameworks](https://github.com/chrisamaphone/lf-class)
 
 ## Usage
 For use with the dc10-scalaq code generator:
